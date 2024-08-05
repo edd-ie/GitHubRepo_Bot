@@ -17,11 +17,11 @@ file.writeFile(path, data, function (err) {
 // The commit dates
 
 
-let pastDaysCount = 1;
+let pastDaysCount = 4;
 let pastDate;
 
 
-for (let i = 0; i < pastDaysCount + 1; i++) {
+for (let i = 1; i < pastDaysCount + 1; i++) {
 	pastDate = moment().subtract(i, 'd').format();
 	simpleGit().add([path]).commit(
 		pastDate, { '--date': pastDate });
