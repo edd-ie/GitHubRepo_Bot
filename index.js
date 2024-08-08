@@ -12,7 +12,7 @@ let pastDate;
 
 
 for (let i = pastDaysCount; i > 0; i--) {
-	pastDate = moment().subtract(i, 'day').format();
+	pastDate = moment().subtract(i, 'days').format();
 
 	file.writeFile(path, { date: pastDate }, function (err) {
 		if (err) {
@@ -21,7 +21,6 @@ for (let i = pastDaysCount; i > 0; i--) {
 		console.log(pastDate + " " + i);
 	});
 
-	simpleGit().add([path]).commit(pastDate, { '--date': pastDate }).push();
-
+	simpleGit().add([path]).commit(pastDate, { '--date': pastDate });
 }
 
