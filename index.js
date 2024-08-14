@@ -16,7 +16,7 @@ file.writeFile(path, data, function (err) {
 
 // The commit dates
 
-let pastDaysCount = 5;
+let pastDaysCount = 10;
 let pastDate;
 
 
