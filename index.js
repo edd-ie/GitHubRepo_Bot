@@ -6,12 +6,12 @@ const path = "./data.json";
 
 // The commit dates
 
-let pastDaysCount = 9;
+let pastDaysCount = 20;
 let pastDate;
 
 
 
-for (let i = 1; i < pastDaysCount; i++) {
+for (let i = pastDaysCount; i > -1; i--) {
 	pastDate = moment().subtract(i, 'day').format();
 
 	file.writeFile(path, { date: pastDate }, function (err) {
