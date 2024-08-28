@@ -1,8 +1,11 @@
 import os , random
 
-for i in range(18): #date
+month = input("Enter month as a number: ")  # Python 3
+startDate = int(input("Enter start date: "))
+endDate = int(input("Enter end date: ")) + 1
+
+for i in range(startDate, endDate, 1): #date
     d = str(i) + 'days ago'
-    month = 8
     with open('test.txt','a') as file:
         file.write(d+'\n')
     os.system('git add test.txt')
